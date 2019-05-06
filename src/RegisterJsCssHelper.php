@@ -23,7 +23,11 @@ class RegisterJsCssHelper
         $result = '';
         if (isset(self::$data[$position])) {
             foreach (self::$data[$position] as $key => $value) {
-                $result .= $value;
+                if (strpos($value, '.js')) {
+                    $result .= "<script src='" . asset($value) . "'></script>\n";
+                } elseif(strpos($value, '.css')) {
+                    $result .= "<link href='" . asset($value) . "'>\n";
+                }
             }
         }
         return $result;
