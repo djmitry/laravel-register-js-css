@@ -1,8 +1,6 @@
 <?php
 namespace Djmitry\RegisterJsCss;
 
-use Illuminate\Support\ServiceProvider;
-
 class RegisterJsCssHelper
 {
     public static $data;

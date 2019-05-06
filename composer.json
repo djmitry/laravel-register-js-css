@@ -19,7 +19,10 @@
         "laravel": {
             "providers": [
                 "Djmitry\\RegisterJsCss\\RegisterJsCssServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Meta": "Djmitry\\RegisterJsCss\\RegisterJsCssHelper"
+            }
         }
     }
 }
