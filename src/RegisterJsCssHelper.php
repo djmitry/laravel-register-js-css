@@ -5,21 +5,27 @@ class RegisterJsCssHelper
 {
     public static $data;
 
-    public static function add(Array $data, $position = 'all')
+    public static function add(Array $data, string $position = 'all')
     {
         if (isset(self::$data[$position])) {
-            self::$data[$position] = $data;
+            self::$data[$position] = array_merge(self::$data[$position], $data);
         } else {
-            self::$data = $data;
+            self::$data = [$position => $data];
         }
     }
 
-    public static function show(Array $data, $position = 'all')
+    public static function show(string $position = 'all')
     {
+        if (empty($position)) {
+            $position = 'all';
+        }
+        
+        $result = '';
         if (isset(self::$data[$position])) {
-            foreach ($data[$position] as $key => $value) {
-                echo $value;
+            foreach (self::$data[$position] as $key => $value) {
+                $result .= $value;
             }
         }
+        return $result;
     }
 }

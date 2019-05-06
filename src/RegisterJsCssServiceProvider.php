@@ -8,8 +8,8 @@ class RegisterJsCssServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Blade::directive('assets', function($expression) {
-            return RegisterJsCssHelper::show();
+        Blade::directive('assets', function(string $position) {
+            return RegisterJsCssHelper::show($position);
         });
     }
 }

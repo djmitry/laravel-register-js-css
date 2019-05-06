@@ -21,7 +21,7 @@
                 "Djmitry\\RegisterJsCss\\RegisterJsCssServiceProvider"
             ],
             "aliases": {
-                "Meta": "Djmitry\\RegisterJsCss\\RegisterJsCssHelper"
+                "RegisterJsCssHelper": "Djmitry\\RegisterJsCss\\RegisterJsCssHelper"
             }
         }
     }
